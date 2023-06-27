@@ -2,12 +2,12 @@
 #Display the content of the file /etc/passwd using the while loop + IFS
 while IFS= read -r line
 do
-	USERNAME=$(echo "$line" | cut -f 1 -d ":")
-	GROUP_ID=$(echo "$line" | cut -f 3 -d ":")
-	HOME_DIRECTORY=$(echo "$line" | cut -f 6 -d ":")
-	COMMAND_SHELL=$(echo "$line" | cut -f 7 -d ":")
-	USER_ID=$(echo "$line" | cut -f 4 -d ":")
-	PASSWORD=$(echo "$line" | cut -f 2 -d ":")
+	USERNAME=$(echo "$line" | cut -f 1 -d ':')
+	GROUP_ID=$(echo "$line" | cut -f 3 -d ':')
+	HOME_DIRECTORY=$(echo "$line" | cut -f 6 -d ':')
+	COMMAND_SHELL=$(echo "$line" | cut -f 7 -d ':')
+	USER_ID=$(echo "$line" | cut -f 4 -d ':')
+	PASSWORD=$(echo "$line" | cut -f 2 -d ':')
 	USER_ID_INFO=$(echo "$line" | cut -f 5 -d ':')
 	echo -n "The user $USERNAME is part of the $GROUP_ID gang, lives "
 	echo -n "in $HOME_DIRECTORY and rides $COMMAND_SHELL. $USER_ID's place "
