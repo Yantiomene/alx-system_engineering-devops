@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Script to manage a subprocess (start, stop and restart)
+FILE=/var/run/my_process.pid
+start() {
+	./manage_my_process &
+	echo "$!" > "$FILE"
+}
+
+stop() {
+       sudo kill -15 "$(cat "$FILE")" && rm -f "$FILE"
+}
+
+restart() {
+	  stop
+	  start
+}
+
+case "$1" in
+     start)
+	start
+	echo "manage_my_process started"
+	;;
+     stop)
+	stop
+	echo "manage_my_process stopped"
+	;;
+     restart)
+	restart
+	echo "manage_my_process restarted"
+	;;
+     *)
+	echo "Usage: manage_my_process {start|stop|restart}"
+esac
+
+exit 0
