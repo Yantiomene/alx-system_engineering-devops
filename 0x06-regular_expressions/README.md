@@ -1,7 +1,7 @@
 # Regular Expressions
 
 For this project, we have to build our regular expression
-using `Oniguruma`, a regular expression library that which
+using `Oniguruma`, a regular expression library that
 is used by Ruby by default.
 
 <em>Note that other regular expression libraries sometimes have different properties.</em>
