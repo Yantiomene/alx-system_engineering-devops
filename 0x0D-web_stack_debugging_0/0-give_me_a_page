@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Get Apache runing on the container
+service apache2 start
