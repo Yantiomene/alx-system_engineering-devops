@@ -9,10 +9,10 @@ exec {'install Nginx':
   provider => shell,
 }
 
-exec { 'add_header':
-  environment => ["HOST=${hostname}"],
-  command     => 'sudo sed -i "s/include \/etc\/nginx\/sites-enabled\/\*;/include \/etc\/nginx\/sites-enabled\/\*;\n\tadd_header X-Served-By \"$HOST\";/" /etc/nginx/nginx.conf',
-  provider    => shell,
+-> file_line { 'add_header':
+  path  => '/etc/nginx/nginx.conf',
+  match => 'http {',
+  line  => 'http {\n\t add_header X-Served-By \"${hostname}\";'
 }
 
 exec {'restart Nginx':
