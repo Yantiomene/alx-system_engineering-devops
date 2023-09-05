@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Script to debug an Ubuntu container's Nginx installation
+# from listening on port 80
+# This will be done by creating a symbolic link and delete the destination file
+ln -sf /etc/nginx/sites-enabled/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
