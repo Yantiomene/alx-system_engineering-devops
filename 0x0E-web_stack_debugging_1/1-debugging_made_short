@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#Script to fix a container Nginx installation and kill the service
+sudo sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+sudo service nginx restart
+sudo kill -9 "$(cat /run/nginx.pid)"
