@@ -40,3 +40,6 @@ Content-Type: text/html; charset=UTF-8
 
 root@c1cea22c50e0:~#
 ```
+
+
+A full details of the step can be found in this ![article](https://medium.com/@yan2016tiomene/how-to-fix-the-http-500-internal-apache-server-error-using-strace-and-tmux-2a8f4722667d)
