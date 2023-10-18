@@ -5,6 +5,7 @@ After=network.target
 [Service]
 User=ubuntu
 Group=www-data
+EnvironmentFile=/home/ubuntu/AirBnB_clone_v4/.env
 WorkingDirectory=/home/ubuntu/AirBnB_clone_v4
 ExecStart=/home/ubuntu/.local/bin/gunicorn --log-file /tmp/airbnb-error.log --access-logfile /tmp/airbnb-access.log --workers 3 --bind 0.0.0.0:5003 web_dynamic.2-hbnb:app
 ExecReload=/bin/kill -s HUP $MAINPID
